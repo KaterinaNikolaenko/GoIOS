@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[ToDoItemsListViewController tableView:cellForRowAtIndexPath:]:ToDoItemsListViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "item.summary">
+            </PersistentString>
+            <PersistentString
+               value = "item.priority">
+            </PersistentString>
+            <PersistentString
+               value = "item.isDone">
+            </PersistentString>
+            <PersistentString
+               value = "item.priority = @&quot;1&quot;">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ToDoItemsListViewController tableView:commitEditingStyle:forRowAtIndexPath:]:ToDoItemsListViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "editingStyle">
+            </PersistentString>
+            <PersistentString
+               value = "@[indexPath]">
+            </PersistentString>
+            <PersistentString
+               value = "self.store">
+            </PersistentString>
+            <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
