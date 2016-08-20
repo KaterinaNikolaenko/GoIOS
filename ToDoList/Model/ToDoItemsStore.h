@@ -13,6 +13,7 @@
 - (void) addItem:(ToDoItem *)item;
 - (void) removeItem:(ToDoItem *)item;
 - (void)removeItemAtIndex:(NSUInteger) index;
+
 //- (NSArray<ToDoItem *> *)items;
 - (NSMutableArray<ToDoItem *> *)items;
 - (NSUInteger) itemsCount;

@@ -8,14 +8,16 @@
 
 #import "ToDoItemsListViewController.h"
 #import "ToDoItemsStore.h"
+#import "NewItemTableViewCell.h"
 
-@interface ToDoItemsListViewController() <UITableViewDataSource, UITableViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
+@interface ToDoItemsListViewController() <UITableViewDataSource, UITableViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource,NewItemTableViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *summaryTextField;
 @property (weak, nonatomic) IBOutlet UITextField *titleTextFIeld;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) id<ToDoItemsStoreProtocol> store;
 @property (weak, nonatomic) IBOutlet UIPickerView *picker;
 
+@property (weak, nonatomic) IBOutlet UIButton *myButton;
 @end
 
 //@interface ViewController ()
@@ -64,6 +66,7 @@
     ToDoItem *item = [[self.store items] objectAtIndex:indexPath.row];
     item.isDone = !item.isDone;
     [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
@@ -83,34 +86,61 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     return [self.store itemsCount];
 }
 
+
+- (IBAction)priorAction:(UIButton *)sender {
+    
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"addcell"];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Cell"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"addcell"];
     }
     ToDoItem *item = [[self.store items] objectAtIndex:indexPath.row];
-    cell.textLabel.text = item.title;
-    cell.detailTextLabel.text = item.summary;
-    cell.accessoryType = item.isDone ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+    NewItemTableViewCell *newItemCell = (NewItemTableViewCell *)cell;
+    newItemCell.textLabel.text = item.title;
+    newItemCell.textLabel1.text = item.summary;
+    newItemCell.myButton.tag = indexPath.row;
+    UIImage *image;
+    //= [[UIImage imageNamed:@"hightPriority"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    //[newItemCell.myButton setImage:image forState:UIControlStateNormal];
+    newItemCell.delegate = self;
+    
+    //newItemCell.textLabel.textColor = [UIColor colorWithRed:224/255.0 green:192/255.0 blue:118/255.0 alpha:1.0];
+    
+    //[newItemCell.myButton addTarget:self action:@selector(priorAction) forControlEvents:UIControlEventTouchUpInside];
+   // cell.textLabel.text = item.title;
+   // cell.detailTextLabel.text = item.summary;
+    //cell.accessoryType = item.isDone ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+    
     PriorityStatus  statPr = item.priority;
     switch (statPr) {
         case PriorityStatusUrgent:
             //red
-                cell.backgroundColor = [UIColor colorWithRed:224/255.0 green:55/255.0 blue:57/255.0 alpha:1.0];
+                newItemCell.textLabel.textColor = [UIColor colorWithRed:224/255.0 green:55/255.0 blue:57/255.0 alpha:1.0];
+                newItemCell.textLabel1.textColor = [UIColor colorWithRed:224/255.0 green:55/255.0 blue:57/255.0 alpha:1.0];
+                image = [[UIImage imageNamed:@"urgentPriority"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
             break;
         case PriorityStatusHigh:
             //yellow
-                cell.backgroundColor = [UIColor colorWithRed:224/255.0 green:192/255.0 blue:118/255.0 alpha:1.0];
+                newItemCell.textLabel.textColor = [UIColor colorWithRed:224/255.0 green:192/255.0 blue:118/255.0 alpha:1.0];
+                newItemCell.textLabel1.textColor = [UIColor colorWithRed:224/255.0 green:192/255.0 blue:118/255.0 alpha:1.0];
+                image = [[UIImage imageNamed:@"hightPriority"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
             break;
         case PriorityStatusLow:
             //green
-            cell.backgroundColor = [UIColor colorWithRed:40/255.0 green:100/255.0 blue:22/255.0 alpha:1.0];
+            newItemCell.textLabel.textColor = [UIColor colorWithRed:40/255.0 green:100/255.0 blue:22/255.0 alpha:1.0];
+            newItemCell.textLabel1.textColor = [UIColor colorWithRed:40/255.0 green:100/255.0 blue:22/255.0 alpha:1.0];
+            image = [[UIImage imageNamed:@"lowPriority"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
             break;
         default:
             //gray
-             cell.backgroundColor = [UIColor colorWithRed:179/255.0 green:179/255.0 blue:179/255.0 alpha:1.0];;
+             newItemCell.textLabel.textColor = [UIColor colorWithRed:179/255.0 green:179/255.0 blue:179/255.0 alpha:1.0];
+             newItemCell.textLabel1.textColor = [UIColor colorWithRed:179/255.0 green:179/255.0 blue:179/255.0 alpha:1.0];
+             image = [[UIImage imageNamed:@"default"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     }
-
+    [newItemCell.myButton setImage:image forState:UIControlStateNormal];
+//cell
     return cell;
 }
 
@@ -124,6 +154,9 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     item.priority = priority;
     [self.store addItem:item];
 };
+
+
+
 
 - (IBAction)didTouchAddButton:(id)sender {
     NSString *title = self.titleTextFIeld.text;
@@ -150,6 +183,59 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     self.summaryTextField.text = nil;
     
     [self.view endEditing:YES];
+}
+//-(NSUInteger)currentSellectedRowIndex {
+//    NSIndexPath *selectedPath = [self.tableView indexPathForSelectedRow];
+//    if (selectedPath) {
+//        return selectedPath.row;
+//    }
+//    else{
+//        return NSNotFound;
+//    }
+//    return 0;
+//}
+
+-(void) buttonTappedOnCell:(NewItemTableViewCell *)selectedcell {
+  //  NSLog(@"All good!!");
+        NSIndexPath *myPath = [self.tableView indexPathForCell:selectedcell];
+    
+    
+    //selectedcell.textLabel.textColor = [UIColor colorWithRed:179/255.0 green:179/255.0 blue:179/255.0 alpha:1.0];
+    ToDoItem *item = [[self.store items] objectAtIndex:myPath.row];
+    PriorityStatus  statPr = item.priority;
+    UIImage *image;
+    switch (statPr) {
+        case PriorityStatusUrgent:
+            //green
+            selectedcell.textLabel.textColor = [UIColor colorWithRed:40/255.0 green:100/255.0 blue:22/255.0 alpha:1.0];
+            selectedcell.textLabel1.textColor = [UIColor colorWithRed:40/255.0 green:100/255.0 blue:22/255.0 alpha:1.0];
+            item.priority = PriorityStatusLow;
+            image = [[UIImage imageNamed:@"lowPriority"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+            break;
+        case PriorityStatusHigh:
+            //red
+            selectedcell.textLabel.textColor = [UIColor colorWithRed:224/255.0 green:55/255.0 blue:57/255.0 alpha:1.0];
+            selectedcell.textLabel1.textColor = [UIColor colorWithRed:224/255.0 green:55/255.0 blue:57/255.0 alpha:1.0];
+            item.priority = PriorityStatusUrgent;
+            image = [[UIImage imageNamed:@"urgentPriority"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+            break;
+        case PriorityStatusLow:
+            //gray
+            selectedcell.textLabel.textColor = [UIColor colorWithRed:179/255.0 green:179/255.0 blue:179/255.0 alpha:1.0];
+            selectedcell.textLabel1.textColor = [UIColor colorWithRed:179/255.0 green:179/255.0 blue:179/255.0 alpha:1.0];
+            item.priority = PriorityStatusDefault;
+            image = [[UIImage imageNamed:@"default"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+            break;
+        default:
+            //yellow
+            selectedcell.textLabel.textColor = [UIColor colorWithRed:224/255.0 green:192/255.0 blue:118/255.0 alpha:1.0];
+            selectedcell.textLabel1.textColor = [UIColor colorWithRed:224/255.0 green:192/255.0 blue:118/255.0 alpha:1.0];
+            item.priority = PriorityStatusHigh;
+            image = [[UIImage imageNamed:@"hightPriority"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    }
+
+    [selectedcell.myButton setImage:image forState:UIControlStateNormal];
+    
 }
 
 //func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){

@@ -15,7 +15,24 @@
                value = "item.isDone">
             </PersistentString>
             <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
+            <PersistentString
+               value = "indexPath.section">
+            </PersistentString>
+            <PersistentString
                value = "item.priority = @&quot;1&quot;">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ToDoItemsListViewController writeMessageMy]:ToDoItemsListViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "newItemCell.textLabel.text">
+            </PersistentString>
+            <PersistentString
+               value = "self.tableView.indexPathForSelectedRow">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -23,16 +40,30 @@
          contextName = "-[ToDoItemsListViewController tableView:commitEditingStyle:forRowAtIndexPath:]:ToDoItemsListViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "editingStyle">
-            </PersistentString>
-            <PersistentString
                value = "@[indexPath]">
             </PersistentString>
             <PersistentString
                value = "self.store">
             </PersistentString>
             <PersistentString
+               value = "editingStyle">
+            </PersistentString>
+            <PersistentString
                value = "indexPath.row">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ToDoItemsListViewController buttonTappedOnCell:]:ToDoItemsListViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[self.tableView cellForRowAtIndexPath:myPath]">
+            </PersistentString>
+            <PersistentString
+               value = "selectedcell.textLabel.text">
+            </PersistentString>
+            <PersistentString
+               value = "statPr">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

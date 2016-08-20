@@ -12,5 +12,6 @@
 {
     NSArray *prior;
     NSString *titleRow;
+    NSUInteger test4;
 }
 @end
