@@ -7,13 +7,24 @@
 //
 
 #import "NewItemTableViewCell.h"
+//@interface NewItemTableViewCell() <UITextFieldDelegate>
+//@end
 
 @implementation NewItemTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+   // self.textField1.delegate = self;
     // Initialization code
 }
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    [self.delegate updatedToDoItem:string fromCell:self];
+    
+    return YES;
+}
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

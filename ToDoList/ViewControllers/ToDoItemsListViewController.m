@@ -10,7 +10,7 @@
 #import "ToDoItemsStore.h"
 #import "NewItemTableViewCell.h"
 
-@interface ToDoItemsListViewController() <UITableViewDataSource, UITableViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource,NewItemTableViewCellDelegate>
+@interface ToDoItemsListViewController() <UITableViewDataSource, UITableViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource,NewItemTableViewCellDelegate,UITextFieldDelegate, UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *summaryTextField;
 @property (weak, nonatomic) IBOutlet UITextField *titleTextFIeld;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -98,13 +98,17 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     }
     ToDoItem *item = [[self.store items] objectAtIndex:indexPath.row];
     NewItemTableViewCell *newItemCell = (NewItemTableViewCell *)cell;
-    newItemCell.textLabel.text = item.title;
-    newItemCell.textLabel1.text = item.summary;
+    newItemCell.textField1.text = item.title;
+    newItemCell.textField2.text = item.summary;
+    //newItemCell.textField1.text = item.title;
     newItemCell.myButton.tag = indexPath.row;
     UIImage *image;
     //= [[UIImage imageNamed:@"hightPriority"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     //[newItemCell.myButton setImage:image forState:UIControlStateNormal];
     newItemCell.delegate = self;
+    
+    //newItemCell.textField1.delegate = self;
+   
     
     //newItemCell.textLabel.textColor = [UIColor colorWithRed:224/255.0 green:192/255.0 blue:118/255.0 alpha:1.0];
     
@@ -117,26 +121,26 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (statPr) {
         case PriorityStatusUrgent:
             //red
-                newItemCell.textLabel.textColor = [UIColor colorWithRed:224/255.0 green:55/255.0 blue:57/255.0 alpha:1.0];
-                newItemCell.textLabel1.textColor = [UIColor colorWithRed:224/255.0 green:55/255.0 blue:57/255.0 alpha:1.0];
+                newItemCell.textField1.textColor = [UIColor colorWithRed:224/255.0 green:55/255.0 blue:57/255.0 alpha:1.0];
+                newItemCell.textField2.textColor = [UIColor colorWithRed:224/255.0 green:55/255.0 blue:57/255.0 alpha:1.0];
                 image = [[UIImage imageNamed:@"urgentPriority"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
             break;
         case PriorityStatusHigh:
             //yellow
-                newItemCell.textLabel.textColor = [UIColor colorWithRed:224/255.0 green:192/255.0 blue:118/255.0 alpha:1.0];
-                newItemCell.textLabel1.textColor = [UIColor colorWithRed:224/255.0 green:192/255.0 blue:118/255.0 alpha:1.0];
+                newItemCell.textField1.textColor = [UIColor colorWithRed:224/255.0 green:192/255.0 blue:118/255.0 alpha:1.0];
+                newItemCell.textField2.textColor = [UIColor colorWithRed:224/255.0 green:192/255.0 blue:118/255.0 alpha:1.0];
                 image = [[UIImage imageNamed:@"hightPriority"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
             break;
         case PriorityStatusLow:
             //green
-            newItemCell.textLabel.textColor = [UIColor colorWithRed:40/255.0 green:100/255.0 blue:22/255.0 alpha:1.0];
-            newItemCell.textLabel1.textColor = [UIColor colorWithRed:40/255.0 green:100/255.0 blue:22/255.0 alpha:1.0];
+            newItemCell.textField1.textColor = [UIColor colorWithRed:40/255.0 green:100/255.0 blue:22/255.0 alpha:1.0];
+            newItemCell.textField2.textColor = [UIColor colorWithRed:40/255.0 green:100/255.0 blue:22/255.0 alpha:1.0];
             image = [[UIImage imageNamed:@"lowPriority"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
             break;
         default:
             //gray
-             newItemCell.textLabel.textColor = [UIColor colorWithRed:179/255.0 green:179/255.0 blue:179/255.0 alpha:1.0];
-             newItemCell.textLabel1.textColor = [UIColor colorWithRed:179/255.0 green:179/255.0 blue:179/255.0 alpha:1.0];
+             newItemCell.textField1.textColor = [UIColor colorWithRed:179/255.0 green:179/255.0 blue:179/255.0 alpha:1.0];
+             newItemCell.textField2.textColor = [UIColor colorWithRed:179/255.0 green:179/255.0 blue:179/255.0 alpha:1.0];
              image = [[UIImage imageNamed:@"default"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     }
     [newItemCell.myButton setImage:image forState:UIControlStateNormal];
@@ -207,29 +211,29 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (statPr) {
         case PriorityStatusUrgent:
             //green
-            selectedcell.textLabel.textColor = [UIColor colorWithRed:40/255.0 green:100/255.0 blue:22/255.0 alpha:1.0];
-            selectedcell.textLabel1.textColor = [UIColor colorWithRed:40/255.0 green:100/255.0 blue:22/255.0 alpha:1.0];
+            selectedcell.textField1.textColor = [UIColor colorWithRed:40/255.0 green:100/255.0 blue:22/255.0 alpha:1.0];
+            selectedcell.textField2.textColor = [UIColor colorWithRed:40/255.0 green:100/255.0 blue:22/255.0 alpha:1.0];
             item.priority = PriorityStatusLow;
             image = [[UIImage imageNamed:@"lowPriority"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
             break;
         case PriorityStatusHigh:
             //red
-            selectedcell.textLabel.textColor = [UIColor colorWithRed:224/255.0 green:55/255.0 blue:57/255.0 alpha:1.0];
-            selectedcell.textLabel1.textColor = [UIColor colorWithRed:224/255.0 green:55/255.0 blue:57/255.0 alpha:1.0];
+            selectedcell.textField1.textColor = [UIColor colorWithRed:224/255.0 green:55/255.0 blue:57/255.0 alpha:1.0];
+            selectedcell.textField2.textColor = [UIColor colorWithRed:224/255.0 green:55/255.0 blue:57/255.0 alpha:1.0];
             item.priority = PriorityStatusUrgent;
             image = [[UIImage imageNamed:@"urgentPriority"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
             break;
         case PriorityStatusLow:
             //gray
-            selectedcell.textLabel.textColor = [UIColor colorWithRed:179/255.0 green:179/255.0 blue:179/255.0 alpha:1.0];
-            selectedcell.textLabel1.textColor = [UIColor colorWithRed:179/255.0 green:179/255.0 blue:179/255.0 alpha:1.0];
+            selectedcell.textField1.textColor = [UIColor colorWithRed:179/255.0 green:179/255.0 blue:179/255.0 alpha:1.0];
+            selectedcell.textField2.textColor = [UIColor colorWithRed:179/255.0 green:179/255.0 blue:179/255.0 alpha:1.0];
             item.priority = PriorityStatusDefault;
             image = [[UIImage imageNamed:@"default"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
             break;
         default:
             //yellow
-            selectedcell.textLabel.textColor = [UIColor colorWithRed:224/255.0 green:192/255.0 blue:118/255.0 alpha:1.0];
-            selectedcell.textLabel1.textColor = [UIColor colorWithRed:224/255.0 green:192/255.0 blue:118/255.0 alpha:1.0];
+            selectedcell.textField1.textColor = [UIColor colorWithRed:224/255.0 green:192/255.0 blue:118/255.0 alpha:1.0];
+            selectedcell.textField2.textColor = [UIColor colorWithRed:224/255.0 green:192/255.0 blue:118/255.0 alpha:1.0];
             item.priority = PriorityStatusHigh;
             image = [[UIImage imageNamed:@"hightPriority"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     }
@@ -237,6 +241,17 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     [selectedcell.myButton setImage:image forState:UIControlStateNormal];
     
 }
+
+- (void)updatedToDoItem:(NSString *)cellItem fromCell:(NewItemTableViewCell *)cell
+{
+    NSIndexPath *p = [self.tableView indexPathForCell:cell];
+    //id item = self.store[p.row];
+    cell.textField1.text = cellItem;
+    ToDoItem *item = [[self.store items] objectAtIndex:p.row];
+    item.title = cellItem;
+    item.summary = cell.textField2.text;
+    item.priority =  item.priority;
+   }
 
 //func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
 //    if (editingStyle == UITableViewCellEditingStyle.Delete){

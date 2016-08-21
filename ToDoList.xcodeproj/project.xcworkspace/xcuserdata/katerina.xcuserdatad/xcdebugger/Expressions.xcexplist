@@ -3,6 +3,20 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[ToDoItemsListViewController updatedToDoItem:fromCell:]:ToDoItemsListViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "cell.textField1.text">
+            </PersistentString>
+            <PersistentString
+               value = "cell.textLabel.text">
+            </PersistentString>
+            <PersistentString
+               value = "item.title">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[ToDoItemsListViewController tableView:cellForRowAtIndexPath:]:ToDoItemsListViewController.m">
          <PersistentStrings>
             <PersistentString
@@ -40,13 +54,13 @@
          contextName = "-[ToDoItemsListViewController tableView:commitEditingStyle:forRowAtIndexPath:]:ToDoItemsListViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "@[indexPath]">
+               value = "editingStyle">
             </PersistentString>
             <PersistentString
                value = "self.store">
             </PersistentString>
             <PersistentString
-               value = "editingStyle">
+               value = "@[indexPath]">
             </PersistentString>
             <PersistentString
                value = "indexPath.row">
