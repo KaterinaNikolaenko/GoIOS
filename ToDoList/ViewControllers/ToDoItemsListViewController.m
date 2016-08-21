@@ -20,23 +20,30 @@
 @property (weak, nonatomic) IBOutlet UIButton *myButton;
 @end
 
-//@interface ViewController ()
-//
-//{
-//    NSArray *prior;
-//    
-//}
-//@end
 
 @implementation ToDoItemsListViewController
 
 - (void) viewDidLoad {
     [super viewDidLoad];
-   // NSArray *prior;
     self.store = [[ToDoItemsStore alloc] init];
     [self addItemWithTitle:@"Buy new iPhone" andSummary:@"When iPhone 8 will be available." andPriority:PriorityStatusLow];
     [self addItemWithTitle:@"Sell my Galaxy S7" andSummary:@"Because iPhone is cool!" andPriority:PriorityStatusHigh];
      prior = [[NSArray alloc]initWithObjects:@"Low",@"Default", @"High", @"Urgent", nil];
+    
+    _titleTextFIeld.returnKeyType = UIReturnKeyDone;
+    [_titleTextFIeld setDelegate:self];
+    _summaryTextField.returnKeyType = UIReturnKeyDone;
+    [_summaryTextField setDelegate:self];
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
+    [super touchesBegan:touches withEvent:event];
 }
 
 @synthesize picker;
@@ -54,8 +61,6 @@
 
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
    // NSLog(@"My number is %li", row);
-   // return [prior objectAtIndex:row];
-   // NSString *titleRow;
     titleRow = [NSString stringWithFormat:@"%@", [prior objectAtIndex:row]];
     return titleRow;
 }
@@ -100,19 +105,13 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     NewItemTableViewCell *newItemCell = (NewItemTableViewCell *)cell;
     newItemCell.textField1.text = item.title;
     newItemCell.textField2.text = item.summary;
-    //newItemCell.textField1.text = item.title;
     newItemCell.myButton.tag = indexPath.row;
     UIImage *image;
-    //= [[UIImage imageNamed:@"hightPriority"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    //[newItemCell.myButton setImage:image forState:UIControlStateNormal];
+
     newItemCell.delegate = self;
     
     //newItemCell.textField1.delegate = self;
    
-    
-    //newItemCell.textLabel.textColor = [UIColor colorWithRed:224/255.0 green:192/255.0 blue:118/255.0 alpha:1.0];
-    
-    //[newItemCell.myButton addTarget:self action:@selector(priorAction) forControlEvents:UIControlEventTouchUpInside];
    // cell.textLabel.text = item.title;
    // cell.detailTextLabel.text = item.summary;
     //cell.accessoryType = item.isDone ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
@@ -252,24 +251,6 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     item.summary = cell.textField2.text;
     item.priority =  item.priority;
    }
-
-//func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
-//    if (editingStyle == UITableViewCellEditingStyle.Delete){
-        
-//        taskMgr.tasks.removeAtIndex(indexPath.row)
-//        tblTasks.reloadData()
-//    }
-//}
-//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
-//    if (editingStyle == UITableViewCellEditingStyle.Delete){
-//        
-//               taskMgr.tasks.removeAtIndex(indexPath.row)
-//                tblTasks.reloadData()
-//}
-
-
-
-
 
 
 @end
