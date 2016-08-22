@@ -33,7 +33,7 @@
     NSError *error = nil;
     NSDictionary *galleries = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
    // NSLog(@"Loaded galleries %@", galleries);
-    
+   //test
    // NSLog(@"Parsed galleries: %@", [self parseGalleriesDictionary:galleries]);
     [self parseGalleriesDictionary:galleries];
 }
