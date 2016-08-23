@@ -16,4 +16,25 @@
   //  return [NSString stringWithFormat:@"name: %@", self.name];
     
 }
+
+- (instancetype) initWithDictionary:(NSDictionary *)data {
+    self = [super init];
+    if (self) {
+        self._id = data[@"_id"];
+        self._created_at = data[@"_created_at"];
+        self._updated_at = data[@"_updated_at"];
+        self.name = data[@"name"];
+        self.galleryDescription = data[@"galleryDescription"];
+        self.email = data[@"email"];
+        self.facebook = data[@"facebook"];
+        self.city = data[@"city"];
+        self.address = data[@"address"];
+        self.galleryLogo = data[@"galleryLogo"];
+        self.link = data[@"link"];
+        self.phone = data[@"phone"];
+        self.latitude = data[@"latitude"];
+        self.longitude = data[@"longitude"];
+    }
+    return self;
+}
 @end

@@ -17,6 +17,8 @@
 		065315361D6A50DD00466B3A /* Gallery.m in Sources */ = {isa = PBXBuildFile; fileRef = 065315351D6A50DD00466B3A /* Gallery.m */; };
 		065315381D6A5F4B00466B3A /* galleries1.json in Resources */ = {isa = PBXBuildFile; fileRef = 065315371D6A5F4B00466B3A /* galleries1.json */; };
 		0653153B1D6A657B00466B3A /* Schedule.m in Sources */ = {isa = PBXBuildFile; fileRef = 0653153A1D6A657B00466B3A /* Schedule.m */; };
+		06F851651D6CDAF800CEE1F2 /* exhibitions.json in Resources */ = {isa = PBXBuildFile; fileRef = 06F851641D6CDAF800CEE1F2 /* exhibitions.json */; };
+		06F851681D6CDB2800CEE1F2 /* Exhibition.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F851671D6CDB2800CEE1F2 /* Exhibition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,9 @@
 		065315371D6A5F4B00466B3A /* galleries1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = galleries1.json; sourceTree = "<group>"; };
 		065315391D6A657B00466B3A /* Schedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Schedule.h; sourceTree = "<group>"; };
 		0653153A1D6A657B00466B3A /* Schedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Schedule.m; sourceTree = "<group>"; };
+		06F851641D6CDAF800CEE1F2 /* exhibitions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = exhibitions.json; path = Model/exhibitions.json; sourceTree = "<group>"; };
+		06F851661D6CDB2800CEE1F2 /* Exhibition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exhibition.h; sourceTree = "<group>"; };
+		06F851671D6CDB2800CEE1F2 /* Exhibition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exhibition.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +75,7 @@
 			children = (
 				065315331D6A508C00466B3A /* Model */,
 				065315311D6A4A2100466B3A /* galleries.json */,
+				06F851641D6CDAF800CEE1F2 /* exhibitions.json */,
 				065315371D6A5F4B00466B3A /* galleries1.json */,
 				0653151D1D6A4A0D00466B3A /* AppDelegate.h */,
 				0653151E1D6A4A0D00466B3A /* AppDelegate.m */,
@@ -99,6 +105,8 @@
 				065315351D6A50DD00466B3A /* Gallery.m */,
 				065315391D6A657B00466B3A /* Schedule.h */,
 				0653153A1D6A657B00466B3A /* Schedule.m */,
+				06F851661D6CDB2800CEE1F2 /* Exhibition.h */,
+				06F851671D6CDB2800CEE1F2 /* Exhibition.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -164,6 +172,7 @@
 				065315271D6A4A0D00466B3A /* Assets.xcassets in Resources */,
 				065315381D6A5F4B00466B3A /* galleries1.json in Resources */,
 				065315321D6A4A2100466B3A /* galleries.json in Resources */,
+				06F851651D6CDAF800CEE1F2 /* exhibitions.json in Resources */,
 				065315251D6A4A0D00466B3A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -175,6 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06F851681D6CDB2800CEE1F2 /* Exhibition.m in Sources */,
 				0653153B1D6A657B00466B3A /* Schedule.m in Sources */,
 				065315361D6A50DD00466B3A /* Gallery.m in Sources */,
 				065315221D6A4A0D00466B3A /* ViewController.m in Sources */,
@@ -330,6 +340,7 @@
 				065315301D6A4A0D00466B3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

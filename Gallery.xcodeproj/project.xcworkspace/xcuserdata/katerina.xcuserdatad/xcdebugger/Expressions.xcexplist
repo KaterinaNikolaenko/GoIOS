@@ -22,5 +22,19 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "-[ViewController parsedExhibitionsDictionary:]:ViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "exhibitionsDictionary[@&quot;authorName&quot;]">
+            </PersistentString>
+            <PersistentString
+               value = "exhibition.authorDescription">
+            </PersistentString>
+            <PersistentString
+               value = "exhibition.authorName">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>

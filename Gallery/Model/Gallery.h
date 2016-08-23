@@ -26,5 +26,6 @@
 
 @property(nonatomic,strong)NSArray *schedules;
 
+- (instancetype) initWithDictionary:(NSDictionary *)data;
 
 @end
