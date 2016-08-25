@@ -16,5 +16,22 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "-[MasterPiece initWithDictionary:]:MasterPiece.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ViewController tableView:cellForRowAtIndexPath:]:ViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "dic.authorName">
+            </PersistentString>
+            <PersistentString
+               value = "evObject.events">
+            </PersistentString>
+            <PersistentString
+               value = "dic.Event">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>

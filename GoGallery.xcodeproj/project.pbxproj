@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		06F8516B1D6E240C00CEE1F2 /* MasterPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F8516A1D6E240C00CEE1F2 /* MasterPiece.m */; };
+		06F8516E1D6F9E8400CEE1F2 /* GalleryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F8516D1D6F9E8400CEE1F2 /* GalleryTableViewController.m */; };
 		41159BE01D6B73260000285D /* Exhibition.m in Sources */ = {isa = PBXBuildFile; fileRef = 41159BDF1D6B73260000285D /* Exhibition.m */; };
 		41159BE71D6B76B80000285D /* NSString+DateConvertor.m in Sources */ = {isa = PBXBuildFile; fileRef = 41159BE61D6B76B80000285D /* NSString+DateConvertor.m */; };
 		41159BEA1D6B7F070000285D /* Gallery.m in Sources */ = {isa = PBXBuildFile; fileRef = 41159BE91D6B7F070000285D /* Gallery.m */; };
@@ -556,6 +557,8 @@
 /* Begin PBXFileReference section */
 		06F851691D6E240C00CEE1F2 /* MasterPiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterPiece.h; sourceTree = "<group>"; };
 		06F8516A1D6E240C00CEE1F2 /* MasterPiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterPiece.m; sourceTree = "<group>"; };
+		06F8516C1D6F9E8400CEE1F2 /* GalleryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GalleryTableViewController.h; sourceTree = "<group>"; };
+		06F8516D1D6F9E8400CEE1F2 /* GalleryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GalleryTableViewController.m; sourceTree = "<group>"; };
 		41159BDE1D6B73260000285D /* Exhibition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exhibition.h; sourceTree = "<group>"; };
 		41159BDF1D6B73260000285D /* Exhibition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exhibition.m; sourceTree = "<group>"; };
 		41159BE51D6B76B80000285D /* NSString+DateConvertor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DateConvertor.h"; sourceTree = "<group>"; };
@@ -1163,6 +1166,8 @@
 				411ED3451D6757E7008D844E /* LaunchScreen.storyboard */,
 				411ED3481D6757E7008D844E /* Info.plist */,
 				411ED3371D6757E7008D844E /* Supporting Files */,
+				06F8516C1D6F9E8400CEE1F2 /* GalleryTableViewController.h */,
+				06F8516D1D6F9E8400CEE1F2 /* GalleryTableViewController.m */,
 			);
 			path = GoGallery;
 			sourceTree = "<group>";
@@ -2375,6 +2380,7 @@
 			files = (
 				41159BE71D6B76B80000285D /* NSString+DateConvertor.m in Sources */,
 				411ED7801D6758D7008D844E /* Event.m in Sources */,
+				06F8516E1D6F9E8400CEE1F2 /* GalleryTableViewController.m in Sources */,
 				41159BEA1D6B7F070000285D /* Gallery.m in Sources */,
 				411ED33F1D6757E7008D844E /* ViewController.m in Sources */,
 				41159BE01D6B73260000285D /* Exhibition.m in Sources */,

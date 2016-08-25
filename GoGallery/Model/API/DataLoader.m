@@ -45,8 +45,12 @@
         Exhibition *ex = [[Exhibition alloc] initWithDictionary:dic];
         NSString *galleryId = [[dic[@"_p_gallery"] componentsSeparatedByString:@"$"] lastObject];
         ex.venue = galleries[galleryId];
-        
-        //ex.masterPieces = ;
+        NSMutableArray *worksIdArray = [NSMutableArray new];
+        for (NSDictionary *dic1 in dic[@"works"]) {
+            NSString *workId = dic1[@"objectId"];
+            [worksIdArray addObject:works[workId]];
+        }
+        ex.masterPieces = worksIdArray;
         [exhibitions addObject:ex];
     }
     

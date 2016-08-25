@@ -14,6 +14,7 @@
     self = [super init];
     if (self) {
         self.ID = data[@"_id"];
+        self.name = data[@"name"];
     }
     return self;
 }
