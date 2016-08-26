@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		06F8516B1D6E240C00CEE1F2 /* MasterPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F8516A1D6E240C00CEE1F2 /* MasterPiece.m */; };
 		06F8516E1D6F9E8400CEE1F2 /* GalleryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F8516D1D6F9E8400CEE1F2 /* GalleryTableViewController.m */; };
+		06F851711D70822000CEE1F2 /* MyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F851701D70822000CEE1F2 /* MyCell.m */; };
 		41159BE01D6B73260000285D /* Exhibition.m in Sources */ = {isa = PBXBuildFile; fileRef = 41159BDF1D6B73260000285D /* Exhibition.m */; };
 		41159BE71D6B76B80000285D /* NSString+DateConvertor.m in Sources */ = {isa = PBXBuildFile; fileRef = 41159BE61D6B76B80000285D /* NSString+DateConvertor.m */; };
 		41159BEA1D6B7F070000285D /* Gallery.m in Sources */ = {isa = PBXBuildFile; fileRef = 41159BE91D6B7F070000285D /* Gallery.m */; };
@@ -559,6 +560,8 @@
 		06F8516A1D6E240C00CEE1F2 /* MasterPiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterPiece.m; sourceTree = "<group>"; };
 		06F8516C1D6F9E8400CEE1F2 /* GalleryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GalleryTableViewController.h; sourceTree = "<group>"; };
 		06F8516D1D6F9E8400CEE1F2 /* GalleryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GalleryTableViewController.m; sourceTree = "<group>"; };
+		06F8516F1D70822000CEE1F2 /* MyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCell.h; sourceTree = "<group>"; };
+		06F851701D70822000CEE1F2 /* MyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCell.m; sourceTree = "<group>"; };
 		41159BDE1D6B73260000285D /* Exhibition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exhibition.h; sourceTree = "<group>"; };
 		41159BDF1D6B73260000285D /* Exhibition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exhibition.m; sourceTree = "<group>"; };
 		41159BE51D6B76B80000285D /* NSString+DateConvertor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DateConvertor.h"; sourceTree = "<group>"; };
@@ -1168,6 +1171,8 @@
 				411ED3371D6757E7008D844E /* Supporting Files */,
 				06F8516C1D6F9E8400CEE1F2 /* GalleryTableViewController.h */,
 				06F8516D1D6F9E8400CEE1F2 /* GalleryTableViewController.m */,
+				06F8516F1D70822000CEE1F2 /* MyCell.h */,
+				06F851701D70822000CEE1F2 /* MyCell.m */,
 			);
 			path = GoGallery;
 			sourceTree = "<group>";
@@ -2383,6 +2388,7 @@
 				06F8516E1D6F9E8400CEE1F2 /* GalleryTableViewController.m in Sources */,
 				41159BEA1D6B7F070000285D /* Gallery.m in Sources */,
 				411ED33F1D6757E7008D844E /* ViewController.m in Sources */,
+				06F851711D70822000CEE1F2 /* MyCell.m in Sources */,
 				41159BE01D6B73260000285D /* Exhibition.m in Sources */,
 				411ED7831D675907008D844E /* Venue.m in Sources */,
 				411ED33C1D6757E7008D844E /* AppDelegate.m in Sources */,

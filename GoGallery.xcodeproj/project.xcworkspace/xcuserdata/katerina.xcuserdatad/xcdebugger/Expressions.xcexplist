@@ -17,19 +17,27 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[MasterPiece initWithDictionary:]:MasterPiece.m">
-      </ContextState>
-      <ContextState
          contextName = "-[ViewController tableView:cellForRowAtIndexPath:]:ViewController.m">
          <PersistentStrings>
+            <PersistentString
+               value = "exArray[3]">
+            </PersistentString>
             <PersistentString
                value = "dic.authorName">
             </PersistentString>
             <PersistentString
-               value = "evObject.events">
+               value = "dic.name">
             </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MasterPiece initWithDictionary:]:MasterPiece.m">
+      </ContextState>
+      <ContextState
+         contextName = "__23-[EventsModel loadData]_block_invoke:EventsModel.m">
+         <PersistentStrings>
             <PersistentString
-               value = "dic.Event">
+               value = "weakself.events">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

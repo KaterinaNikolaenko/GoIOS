@@ -68,20 +68,20 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    
+   
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Cell"];
     }
-    EventsModel *evObject =[[EventsModel alloc] init];
+   // EventsModel *evObject =[[EventsModel alloc] init];
     //Works
     //  NSMutableDictionary <NSString *, EventsModel *> *events = [[NSMutableDictionary alloc] initWithCapacity:[evObject.events count]];
     
-    for (Exhibition *dic in evObject.events) {
+   // for (Exhibition *dic in evObject.events) {
         //        EventsModel *event = [[EventsModel alloc] initWithDictionary:dic];
         //NSLog(@"Test %@", dic.authorName);
        // cell.textLabel.text = dic.authorName;
         // [events setObject:event forKey:event.ID];
-    }
+   // }
 
     
     return cell;

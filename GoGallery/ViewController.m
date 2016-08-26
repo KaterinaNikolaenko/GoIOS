@@ -12,8 +12,10 @@
 #import "MasterPiece.h"
 #import "Gallery.h"
 #import "DataLoader.h"
+#import "MyCell.h"
 
 @interface ViewController() <UITableViewDataSource, UITableViewDelegate>
+//@property (nonatomic, strong) NSMutableArray *persons;
 
 @end
 
@@ -21,7 +23,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+   // NSMutableArray <Exhibition *> *exhibs;
+   // NSArray *person1, *person2,*person3;
+   // person1 = [NSArray arrayWithObjects:@"Ivanov", @"Direct", nil];
+   // person2 = [NSArray arrayWithObjects:@"Petrov", @"Marketolog", nil];
+   // person3 = [NSArray arrayWithObjects:@"Sidorov", @"Finansist", nil];
     
+   // _persons = [NSArray arrayWithObjects:person3,person2,person1, nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,9 +40,7 @@
 #pragma mark - UITableViewDelegate
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-   // ToDoItem *item = [[self.store items] objectAtIndex:indexPath.row];
-   // item.isDone = !item.isDone;
-   // [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     
 }
 
@@ -54,46 +60,71 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
  //   return [self.store itemsCount];
-    //Exhibition *exh;
-    return 5;
+    return 15;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+   // UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+     MyCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Cell"];
+        cell = [[MyCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Cell"];
     }
+    //NSURL *url = [NSURL URLWithString:<#(nonnull NSString *)#>]
+  
+    UIImage *img = [UIImage imageNamed:@"tfss-03113753-cc88-44aa-8c56-ec9ef81a68f7-_37_X_34_cm.jpg"];
+
     EventsModel *evObject =[[EventsModel alloc] init];
-    //Works
-  //  NSMutableDictionary <NSString *, EventsModel *> *events = [[NSMutableDictionary alloc] initWithCapacity:[evObject.events count]];
-   
-    for (Exhibition *dic in evObject.events) {
-//        EventsModel *event = [[EventsModel alloc] initWithDictionary:dic];
-       // NSLog(@"Test %@", dic.authorName);
-        cell.textLabel.text = dic.authorName;
-       // [events setObject:event forKey:event.ID];
+    NSMutableArray *exArray = [NSMutableArray new];
+    NSNull *myNull = [NSNull null];
+    for (Exhibition *dic in evObject.events){
+        if (dic.authorName == nil) {
+            [exArray addObject:myNull];
+        } else {
+            [exArray addObject:dic.authorName];
+        }
     }
     
-   
-  //  evObj = [evObj.events objectAtIndex:indexPath.row];
-  // ViewController *newItemCell = (ViewController *)cell;
+    NSInteger index = [indexPath row];
+    Event *ev = evObject.events[index];
     
-  //newItemCell
+    cell.nameGallery.text = ev.venue.name;
+    cell.nameExhibition.text = ev.name;
+    cell.nameAuthor.text = exArray[index];
+    cell.imageCell.image = img;
     
-    //ToDoItem *item = [[self.store items] objectAtIndex:indexPath.row];
-   // NewItemTableViewCell *newItemCell = (NewItemTableViewCell *)cell;
-   // newItemCell.textField1.text = item.title;
-   // newItemCell.textField2.text = item.summary;
-   // newItemCell.myButton.tag = indexPath.row;
-   // UIImage *image;
     
-   // newItemCell.delegate = self;
     
-   // [newItemCell.myButton setImage:image forState:UIControlStateNormal];
-    //cell
+    /////////////////////////////////////////////////////
+    //if (!cell) {
+    //    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Cell"];
+   // }
+   //// EventsModel *evObject =[[EventsModel alloc] init];
+   // NSMutableArray *exArray = [NSMutableArray new];
+   // NSNull *myNull = [NSNull null];
+   // for (Exhibition *dic in evObject.events){
+    //    if (dic.authorName == nil) {
+    //        [exArray addObject:myNull];
+    //    } else {
+    //        [exArray addObject:dic.authorName];
+    //    }
+   // }
+    
+   // NSInteger index = [indexPath row];
+   // Event *ev = evObject.events[index];
+    
+   // cell.textLabel.text = exArray[index];
+   // cell.detailTextLabel.text = ev.venue.name;
+    
+    
     return cell;
 }
 
 
 @end
+
+
+
+
+
+
