@@ -60,9 +60,28 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
  //   return [self.store itemsCount];
-    return 15;
+    
+//    EventsModel *evObject =[[EventsModel alloc] init];
+//    NSUInteger ev = evObject.events.count;
+//    
+//    NSMutableArray *exArray = [NSMutableArray new];
+//    NSNull *myNull = [NSNull null];
+//    for (Exhibition *dic in evObject.events){
+//        if (dic.authorName == nil) {
+//            [exArray addObject:myNull];
+//        } else {
+//            [exArray addObject:dic.authorName];
+//        }
+//    }
+//    return ev;
+  //  return [exArray count];
+    return 127;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 344;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
    // UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
@@ -70,18 +89,32 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (!cell) {
         cell = [[MyCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Cell"];
     }
-    //NSURL *url = [NSURL URLWithString:<#(nonnull NSString *)#>]
   
-    UIImage *img = [UIImage imageNamed:@"tfss-03113753-cc88-44aa-8c56-ec9ef81a68f7-_37_X_34_cm.jpg"];
+    [self tableView:tableView heightForRowAtIndexPath:indexPath];
+    
+   // UIImage *img = [UIImage imageNamed:@"tfss-03113753-cc88-44aa-8c56-ec9ef81a68f7-_37_X_34_cm.jpg"];
 
+    
+    
+    
+    
     EventsModel *evObject =[[EventsModel alloc] init];
     NSMutableArray *exArray = [NSMutableArray new];
+    NSMutableArray *masterPieceArray = [NSMutableArray new];
     NSNull *myNull = [NSNull null];
     for (Exhibition *dic in evObject.events){
         if (dic.authorName == nil) {
             [exArray addObject:myNull];
         } else {
             [exArray addObject:dic.authorName];
+        }
+        if (!(dic.masterPieces.firstObject == nil)){
+             MasterPiece *mas = dic.masterPieces[0];
+            if (mas.imgPict == nil) {
+                [masterPieceArray addObject:myNull];
+            } else {
+                [masterPieceArray addObject:mas.imgPict];
+            }
         }
     }
     
@@ -91,8 +124,19 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     cell.nameGallery.text = ev.venue.name;
     cell.nameExhibition.text = ev.name;
     cell.nameAuthor.text = exArray[index];
-    cell.imageCell.image = img;
+   // cell.imageCell.image = img;
     
+    UIImageView *av = [[UIImageView alloc] initWithFrame:CGRectMake(20, 20, 277, 58)];
+    av.backgroundColor = [UIColor clearColor];
+    av.opaque = NO;
+    
+    NSURL *url = masterPieceArray[index];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    UIImage *image = [UIImage imageWithData:data];
+    av.image = image;
+    
+    //av.image = [UIImage imageNamed:@"tfss-0528dbc9-0efd-4aa2-9a42-325505f20c01-dition_of_6.jpg"];
+    cell.backgroundView = av;
     
     
     /////////////////////////////////////////////////////

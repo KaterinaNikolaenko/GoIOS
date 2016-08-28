@@ -20,13 +20,22 @@
          contextName = "-[ViewController tableView:cellForRowAtIndexPath:]:ViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "exArray[3]">
+               value = "dic.masterPieces[0]">
             </PersistentString>
             <PersistentString
-               value = "dic.authorName">
+               value = "dic">
             </PersistentString>
             <PersistentString
-               value = "dic.name">
+               value = "MasterPieceArray">
+            </PersistentString>
+            <PersistentString
+               value = "dic.masterPieces[1]._imgPict">
+            </PersistentString>
+            <PersistentString
+               value = "exArray[index]">
+            </PersistentString>
+            <PersistentString
+               value = "index">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -38,6 +47,14 @@
          <PersistentStrings>
             <PersistentString
                value = "weakself.events">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ViewController tableView:numberOfRowsInSection:]:ViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[exArray count]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
