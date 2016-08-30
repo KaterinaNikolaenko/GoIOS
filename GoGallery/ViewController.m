@@ -124,20 +124,20 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     cell.nameGallery.text = ev.venue.name;
     cell.nameExhibition.text = ev.name;
     cell.nameAuthor.text = exArray[index];
-   // cell.imageCell.image = img;
+  ////cell.imageCell.image = img;
     
-    UIImageView *av = [[UIImageView alloc] initWithFrame:CGRectMake(20, 20, 277, 58)];
-    av.backgroundColor = [UIColor clearColor];
-    av.opaque = NO;
+   // UIImageView *av = [[UIImageView alloc] initWithFrame:CGRectMake(20, 20, 277, 58)];
+   // av.backgroundColor = [UIColor clearColor];
+   // av.opaque = NO;
     
     NSURL *url = masterPieceArray[index];
     NSData *data = [NSData dataWithContentsOfURL:url];
     UIImage *image = [UIImage imageWithData:data];
-    av.image = image;
+   // av.image = image;
     
-    //av.image = [UIImage imageNamed:@"tfss-0528dbc9-0efd-4aa2-9a42-325505f20c01-dition_of_6.jpg"];
-    cell.backgroundView = av;
-    
+    ////av.image = [UIImage imageNamed:@"tfss-0528dbc9-0efd-4aa2-9a42-325505f20c01-dition_of_6.jpg"];
+    //cell.backgroundView = av;
+    cell.imageCell.image = image;
     
     /////////////////////////////////////////////////////
     //if (!cell) {
