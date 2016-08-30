@@ -20,19 +20,22 @@
          contextName = "-[ViewController tableView:cellForRowAtIndexPath:]:ViewController.m">
          <PersistentStrings>
             <PersistentString
+               value = "exArray">
+            </PersistentString>
+            <PersistentString
                value = "dic.masterPieces[0]">
             </PersistentString>
             <PersistentString
                value = "dic">
             </PersistentString>
             <PersistentString
-               value = "MasterPieceArray">
-            </PersistentString>
-            <PersistentString
                value = "dic.masterPieces[1]._imgPict">
             </PersistentString>
             <PersistentString
-               value = "exArray[index]">
+               value = "MasterPieceArray">
+            </PersistentString>
+            <PersistentString
+               value = "evObject">
             </PersistentString>
             <PersistentString
                value = "index">
