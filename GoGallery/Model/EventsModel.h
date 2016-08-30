@@ -12,6 +12,5 @@
 @interface EventsModel : NSObject
 + (EventsModel *)sharedModel;
 - (NSArray<Event *> *) events;
-//- (NSArray<Event *> *) exhibitions;
 
 @end

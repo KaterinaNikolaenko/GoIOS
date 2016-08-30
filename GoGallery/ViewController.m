@@ -23,13 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   // NSMutableArray <Exhibition *> *exhibs;
-   // NSArray *person1, *person2,*person3;
-   // person1 = [NSArray arrayWithObjects:@"Ivanov", @"Direct", nil];
-   // person2 = [NSArray arrayWithObjects:@"Petrov", @"Marketolog", nil];
-   // person3 = [NSArray arrayWithObjects:@"Sidorov", @"Finansist", nil];
-    
-   // _persons = [NSArray arrayWithObjects:person3,person2,person1, nil];
+   
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,23 +53,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
- //   return [self.store itemsCount];
-    
-//    EventsModel *evObject =[[EventsModel alloc] init];
-//    NSUInteger ev = evObject.events.count;
-//    
-//    NSMutableArray *exArray = [NSMutableArray new];
-//    NSNull *myNull = [NSNull null];
-//    for (Exhibition *dic in evObject.events){
-//        if (dic.authorName == nil) {
-//            [exArray addObject:myNull];
-//        } else {
-//            [exArray addObject:dic.authorName];
-//        }
-//    }
-//    return ev;
-  //  return [exArray count];
-    return 127;
+    return [[EventsModel sharedModel].events count];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -92,13 +70,12 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
   
     [self tableView:tableView heightForRowAtIndexPath:indexPath];
     
-     //UIImage *image = [UIImage imageNamed:@"tfss-03113753-cc88-44aa-8c56-ec9ef81a68f7-_37_X_34_cm.jpg"];
-    
     NSArray *eventsArray = [EventsModel sharedModel].events;
     Exhibition * exObject = eventsArray[indexPath.row];
     cell.nameGallery.text = exObject.venue.name;
     cell.nameExhibition.text = exObject.name;
     cell.nameAuthor.text = exObject.authorName;
+    
     if (!(exObject.masterPieces.firstObject == nil)){
         MasterPiece *masterPiece = [exObject.masterPieces firstObject];
         NSURL *url = masterPiece.imgPict;

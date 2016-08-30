@@ -14,8 +14,6 @@
 @interface EventsModel()
 @property (nonatomic, strong) NSArray <Event *> *events;
 
-//@property (nonatomic, strong) NSArray <Exhibition *> *exhibitions;
-
 @property (nonatomic, strong) id<DataLoaderProtocol> dataLoader;
 @end
 
@@ -43,10 +41,6 @@
     __weak typeof(self) weakself = self;
     [self.dataLoader loadEventsWithCallback:^(NSArray<Event *> * events, NSError *error) {
         weakself.events = events;
-        
-        //_weak typeof(self) weakself = self;
-        //[self.dataLoader loadEventsWithCallback:^(NSArray<Event *> * events, NSError *error) {
-          //  weakself.events = events;
         
         }];
 }
