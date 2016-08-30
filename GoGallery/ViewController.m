@@ -94,13 +94,13 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     
      //UIImage *image = [UIImage imageNamed:@"tfss-03113753-cc88-44aa-8c56-ec9ef81a68f7-_37_X_34_cm.jpg"];
     
-    NSArray *exArray = [EventsModel sharedModel].events;
-    Exhibition * exObject = exArray[indexPath.row];
+    NSArray *eventsArray = [EventsModel sharedModel].events;
+    Exhibition * exObject = eventsArray[indexPath.row];
     cell.nameGallery.text = exObject.venue.name;
     cell.nameExhibition.text = exObject.name;
     cell.nameAuthor.text = exObject.authorName;
     if (!(exObject.masterPieces.firstObject == nil)){
-        MasterPiece *masterPiece = exObject.masterPieces[0];
+        MasterPiece *masterPiece = [exObject.masterPieces firstObject];
         NSURL *url = masterPiece.imgPict;
         NSData *data = [NSData dataWithContentsOfURL:url];
         UIImage *image = [UIImage imageWithData:data];
