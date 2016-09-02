@@ -12,8 +12,8 @@
 
 - (NSDate *) date {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
-    [formatter setDateFormat:@"yyyy-MM-dd'T'hh:mm:ss'Z'"];
+    formatter.timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
+    formatter.dateFormat = @"yyyy-MM-dd'T'hh:mm:ss'Z'";
     return [formatter dateFromString:self];
 }
 

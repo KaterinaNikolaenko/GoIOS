@@ -21,6 +21,7 @@
 @property (nonatomic, strong) NSString *phone;
 @property (nonatomic, strong) CLLocation *location;
 
+//- (instancetype) initWithDictionary:(NSDictionary *)data NS_DESIGNATED_INITIALIZER NS_DESIGNATED_INITIALIZER;
 - (instancetype) initWithDictionary:(NSDictionary *)data;
 
 @end

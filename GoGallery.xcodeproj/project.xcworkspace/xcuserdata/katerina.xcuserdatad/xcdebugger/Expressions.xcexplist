@@ -3,20 +3,6 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "-[DataLoader loadEventsWithCallback:]:DataLoader.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "rawGalleries">
-            </PersistentString>
-            <PersistentString
-               value = "dic[@&quot;works&quot;]">
-            </PersistentString>
-            <PersistentString
-               value = "rawWorks">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "-[ViewController tableView:cellForRowAtIndexPath:]:ViewController.m">
          <PersistentStrings>
             <PersistentString
@@ -46,6 +32,25 @@
          contextName = "-[MasterPiece initWithDictionary:]:MasterPiece.m">
       </ContextState>
       <ContextState
+         contextName = "-[ViewController tableView:numberOfRowsInSection:]:ViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[exArray count]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ExhibitionDescriptionVC viewDidLoad]:ExhibitionDescriptionVC.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.exhibition">
+            </PersistentString>
+            <PersistentString
+               value = "self.exhibition.name">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "__23-[EventsModel loadData]_block_invoke:EventsModel.m">
          <PersistentStrings>
             <PersistentString
@@ -54,12 +59,21 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[ViewController tableView:numberOfRowsInSection:]:ViewController.m">
+         contextName = "-[DataLoader loadEventsWithCallback:]:DataLoader.m">
          <PersistentStrings>
             <PersistentString
-               value = "[exArray count]">
+               value = "rawGalleries">
+            </PersistentString>
+            <PersistentString
+               value = "dic[@&quot;works&quot;]">
+            </PersistentString>
+            <PersistentString
+               value = "rawWorks">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ViewController tableView:didSelectRowAtIndexPath:]:ViewController.m">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

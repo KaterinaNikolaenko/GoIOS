@@ -29,7 +29,7 @@
     return _sharedModel;
 }
 
-- (id)init {
+- (instancetype)init {
     if (self = [super init]) {
         self.dataLoader = [[DataLoader alloc] init];
         [self loadData];

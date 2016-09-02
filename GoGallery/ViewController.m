@@ -13,6 +13,7 @@
 #import "Gallery.h"
 #import "DataLoader.h"
 #import "MyCell.h"
+#import "ExhibitionDescriptionVC.h"
 
 @interface ViewController() <UITableViewDataSource, UITableViewDelegate>
 //@property (nonatomic, strong) NSMutableArray *persons;
@@ -34,6 +35,10 @@
 #pragma mark - UITableViewDelegate
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSArray *eventsArray = [EventsModel sharedModel].events;
+    Exhibition * exObject = eventsArray[indexPath.row];
+    
+    [self performSegueWithIdentifier:@"ShowMyDetail" sender:exObject];
     [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     
 }
@@ -53,7 +58,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return [[EventsModel sharedModel].events count];
+    
+    return ([EventsModel sharedModel].events).count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -77,7 +83,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     cell.nameAuthor.text = exObject.authorName;
     
     if (!(exObject.masterPieces.firstObject == nil)){
-        MasterPiece *masterPiece = [exObject.masterPieces firstObject];
+        MasterPiece *masterPiece = (exObject.masterPieces).firstObject;
         NSURL *url = masterPiece.imgPict;
         NSData *data = [NSData dataWithContentsOfURL:url];
         UIImage *image = [UIImage imageWithData:data];
@@ -85,6 +91,12 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     }
     
     return cell;
+}
+
+#pragma mark - UIViewController
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    ExhibitionDescriptionVC *vc = segue.destinationViewController;
+    vc.exhibition = (Exhibition *) sender;
 }
 
 

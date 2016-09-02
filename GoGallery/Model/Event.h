@@ -18,6 +18,8 @@
 @property (nonatomic, strong) NSDate *dateEnd;
 @property (nonatomic, strong) Venue *venue;
 
+//- (instancetype) initWithDictionary:(NSDictionary *)data NS_DESIGNATED_INITIALIZER NS_DESIGNATED_INITIALIZER;
 - (instancetype) initWithDictionary:(NSDictionary *)data;
+
 
 @end

@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface NSString (DateConvertor)
+//@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSDate *dateATOMIC_IOSONLY, readonly, copy) NSDate *date;
 - (NSDate *) date;
 @end

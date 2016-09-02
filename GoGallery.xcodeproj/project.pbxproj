@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06F6A1011D797210009FD097 /* ExhibitionDescriptionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F6A1001D797210009FD097 /* ExhibitionDescriptionVC.m */; };
 		06F8516B1D6E240C00CEE1F2 /* MasterPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F8516A1D6E240C00CEE1F2 /* MasterPiece.m */; };
 		06F8516E1D6F9E8400CEE1F2 /* GalleryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F8516D1D6F9E8400CEE1F2 /* GalleryTableViewController.m */; };
 		06F851711D70822000CEE1F2 /* MyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F851701D70822000CEE1F2 /* MyCell.m */; };
@@ -556,6 +557,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06F6A0FF1D797210009FD097 /* ExhibitionDescriptionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExhibitionDescriptionVC.h; sourceTree = "<group>"; };
+		06F6A1001D797210009FD097 /* ExhibitionDescriptionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExhibitionDescriptionVC.m; sourceTree = "<group>"; };
 		06F851691D6E240C00CEE1F2 /* MasterPiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterPiece.h; sourceTree = "<group>"; };
 		06F8516A1D6E240C00CEE1F2 /* MasterPiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterPiece.m; sourceTree = "<group>"; };
 		06F8516C1D6F9E8400CEE1F2 /* GalleryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GalleryTableViewController.h; sourceTree = "<group>"; };
@@ -1173,6 +1176,8 @@
 				06F8516D1D6F9E8400CEE1F2 /* GalleryTableViewController.m */,
 				06F8516F1D70822000CEE1F2 /* MyCell.h */,
 				06F851701D70822000CEE1F2 /* MyCell.m */,
+				06F6A0FF1D797210009FD097 /* ExhibitionDescriptionVC.h */,
+				06F6A1001D797210009FD097 /* ExhibitionDescriptionVC.m */,
 			);
 			path = GoGallery;
 			sourceTree = "<group>";
@@ -2395,6 +2400,7 @@
 				411ED7791D67584A008D844E /* EventsModel.m in Sources */,
 				411ED3391D6757E7008D844E /* main.m in Sources */,
 				411ED77D1D675890008D844E /* DataLoader.m in Sources */,
+				06F6A1011D797210009FD097 /* ExhibitionDescriptionVC.m in Sources */,
 				06F8516B1D6E240C00CEE1F2 /* MasterPiece.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

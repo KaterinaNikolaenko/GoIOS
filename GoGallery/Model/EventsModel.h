@@ -12,5 +12,6 @@
 @interface EventsModel : NSObject
 + (EventsModel *)sharedModel;
 - (NSArray<Event *> *) events;
+//@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSArray<Event *> *events;
 
 @end

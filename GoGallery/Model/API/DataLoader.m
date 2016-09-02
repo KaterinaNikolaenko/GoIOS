@@ -25,25 +25,25 @@
     }
     
     //Works
-    NSMutableDictionary <NSString *, MasterPiece *> *works = [[NSMutableDictionary alloc] initWithCapacity:[rawWorks count]];
+    NSMutableDictionary <NSString *, MasterPiece *> *works = [[NSMutableDictionary alloc] initWithCapacity:rawWorks.count];
     
     for (NSDictionary *dic in rawWorks) {
         MasterPiece *work = [[MasterPiece alloc] initWithDictionary:dic];
-        [works setObject:work forKey:work.ID];
+        works[work.ID] = work;
     }
     //
     
-    NSMutableDictionary <NSString *, Gallery *> *galleries = [[NSMutableDictionary alloc] initWithCapacity:[rawGalleries count]];
+    NSMutableDictionary <NSString *, Gallery *> *galleries = [[NSMutableDictionary alloc] initWithCapacity:rawGalleries.count];
     
     for (NSDictionary *dic in rawGalleries) {
         Gallery *gal = [[Gallery alloc] initWithDictionary:dic];
-        [galleries setObject:gal forKey:gal.ID];
+        galleries[gal.ID] = gal;
     }
     
-    NSMutableArray *exhibitions = [NSMutableArray arrayWithCapacity:[rawExhibitions count]];
+    NSMutableArray *exhibitions = [NSMutableArray arrayWithCapacity:rawExhibitions.count];
     for (NSDictionary *dic in rawExhibitions) {
         Exhibition *ex = [[Exhibition alloc] initWithDictionary:dic];
-        NSString *galleryId = [[dic[@"_p_gallery"] componentsSeparatedByString:@"$"] lastObject];
+        NSString *galleryId = [dic[@"_p_gallery"] componentsSeparatedByString:@"$"].lastObject;
         ex.venue = galleries[galleryId];
         NSMutableArray *worksIdArray = [NSMutableArray new];
         for (NSDictionary *dic1 in dic[@"works"]) {

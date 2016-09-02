@@ -14,5 +14,6 @@
 @property (nonatomic, strong) NSString *author;
 @property (nonatomic, strong) NSURL *imgPict;
 
+//- (instancetype) initWithDictionary:(NSDictionary *)data NS_DESIGNATED_INITIALIZER NS_DESIGNATED_INITIALIZER;
 - (instancetype) initWithDictionary:(NSDictionary *)data;
 @end
