@@ -18,6 +18,7 @@
 @property (nonatomic, strong) NSString *address;
 @property (nonatomic, strong) NSURL *logo;
 @property (nonatomic, strong) NSURL *link;
+@property (nonatomic, strong) NSURL *facebook;
 @property (nonatomic, strong) NSString *phone;
 @property (nonatomic, strong) CLLocation *location;
 

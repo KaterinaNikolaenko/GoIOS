@@ -15,6 +15,10 @@
     if (self) {
         self.ID = data[@"_id"];
         self.name = data[@"name"];
+        self.address = data[@"address"];
+        self.phone = data[@"phone"];
+        self.link = data[@"link"];
+        self.facebook = data[@"facebook"];
     }
     return self;
 }
