@@ -17,8 +17,11 @@
         self.name = data[@"name"];
         self.address = data[@"address"];
         self.phone = data[@"phone"];
-        self.link = data[@"link"];
+        NSURL *urlLink = [NSURL URLWithString:data[@"link"]];
+        self.link = urlLink;
+       // NSURL *urlFacebook = [NSURL URLWithString:data[@"facebook"]];
         self.facebook = data[@"facebook"];
+        self.galleryDescription = data[@"galleryDescription"];
     }
     return self;
 }

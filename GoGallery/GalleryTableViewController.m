@@ -72,16 +72,16 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Cell"];
     }
-   // EventsModel *evObject =[[EventsModel alloc] init];
-    //Works
-    //  NSMutableDictionary <NSString *, EventsModel *> *events = [[NSMutableDictionary alloc] initWithCapacity:[evObject.events count]];
-    
-   // for (Exhibition *dic in evObject.events) {
-        //        EventsModel *event = [[EventsModel alloc] initWithDictionary:dic];
-        //NSLog(@"Test %@", dic.authorName);
-       // cell.textLabel.text = dic.authorName;
-        // [events setObject:event forKey:event.ID];
-   // }
+//    EventsModel *evObject =[[EventsModel alloc] init];
+//    Works
+//      NSMutableDictionary <NSString *, EventsModel *> *events = [[NSMutableDictionary alloc] initWithCapacity:[evObject.events count]];
+//    
+//    for (Exhibition *dic in evObject.events) {
+//                EventsModel *event = [[EventsModel alloc] initWithDictionary:dic];
+//        NSLog(@"Test %@", dic.authorName);
+//        cell.textLabel.text = dic.authorName;
+//         [events setObject:event forKey:event.ID];
+//    }
 
     
     return cell;

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0668AA2B1D91E574002116B3 /* PatternCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0668AA2A1D91E574002116B3 /* PatternCollectionViewCell.m */; };
 		06F431AA1D8AA4A500492A6D /* Clock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06F431A81D8AA4A500492A6D /* Clock@2x.png */; };
 		06F431AB1D8AA4A500492A6D /* Clock@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06F431A91D8AA4A500492A6D /* Clock@3x.png */; };
 		06F431AE1D8D3D5B00492A6D /* maps_pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06F431AC1D8D3D5B00492A6D /* maps_pin@2x.png */; };
@@ -567,6 +568,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0668AA291D91E574002116B3 /* PatternCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatternCollectionViewCell.h; sourceTree = "<group>"; };
+		0668AA2A1D91E574002116B3 /* PatternCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatternCollectionViewCell.m; sourceTree = "<group>"; };
 		06F431A81D8AA4A500492A6D /* Clock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Clock@2x.png"; path = "Icons/Clock@2x.png"; sourceTree = "<group>"; };
 		06F431A91D8AA4A500492A6D /* Clock@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Clock@3x.png"; path = "Icons/Clock@3x.png"; sourceTree = "<group>"; };
 		06F431AC1D8D3D5B00492A6D /* maps_pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "maps_pin@2x.png"; path = "Icons/maps_pin@2x.png"; sourceTree = "<group>"; };
@@ -1205,6 +1208,8 @@
 				411ED33D1D6757E7008D844E /* ViewController.h */,
 				411ED33E1D6757E7008D844E /* ViewController.m */,
 				411ED3401D6757E7008D844E /* Main.storyboard */,
+				0668AA291D91E574002116B3 /* PatternCollectionViewCell.h */,
+				0668AA2A1D91E574002116B3 /* PatternCollectionViewCell.m */,
 				411ED3431D6757E7008D844E /* Assets.xcassets */,
 				411ED3451D6757E7008D844E /* LaunchScreen.storyboard */,
 				411ED3481D6757E7008D844E /* Info.plist */,
@@ -2440,6 +2445,7 @@
 				411ED7801D6758D7008D844E /* Event.m in Sources */,
 				06F8516E1D6F9E8400CEE1F2 /* GalleryTableViewController.m in Sources */,
 				41159BEA1D6B7F070000285D /* Gallery.m in Sources */,
+				0668AA2B1D91E574002116B3 /* PatternCollectionViewCell.m in Sources */,
 				411ED33F1D6757E7008D844E /* ViewController.m in Sources */,
 				06F851711D70822000CEE1F2 /* MyCell.m in Sources */,
 				41159BE01D6B73260000285D /* Exhibition.m in Sources */,

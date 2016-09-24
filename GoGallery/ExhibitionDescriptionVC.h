@@ -12,6 +12,8 @@
 #import "Event.h"
 
 
-@interface ExhibitionDescriptionVC : ViewController
+@interface ExhibitionDescriptionVC : ViewController<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 @property(strong)Exhibition *exhibition;
+@property (weak, nonatomic) IBOutlet UICollectionView *myCollectionView;
+
 @end

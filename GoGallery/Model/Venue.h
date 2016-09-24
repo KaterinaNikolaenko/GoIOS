@@ -13,12 +13,12 @@
 
 @property (nonatomic, strong) NSString *ID;
 @property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *about;
+@property (nonatomic, strong) NSString *galleryDescription;
 @property (nonatomic, strong) NSString *city;
 @property (nonatomic, strong) NSString *address;
 @property (nonatomic, strong) NSURL *logo;
 @property (nonatomic, strong) NSURL *link;
-@property (nonatomic, strong) NSURL *facebook;
+@property (nonatomic, strong) NSString *facebook;
 @property (nonatomic, strong) NSString *phone;
 @property (nonatomic, strong) CLLocation *location;
 
