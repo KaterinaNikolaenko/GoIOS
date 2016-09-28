@@ -100,7 +100,11 @@
     self.aboutGallery.text = self.exhibition.venue.galleryDescription;
     self.buttonTransform.backgroundColor = [UIColor greenColor];
     
-     //[self.myCollectionView setScrollDirection:UICollectionViewScrollDirectionHorizontal];
+    //UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+   // [flowLayout setMinimumInteritemSpacing:0.0f];
+   // [flowLayout setMinimumLineSpacing:0.0f];
+   // [self.myCollectionView setCollectionViewLayout:flowLayout];
+    
     
 }
 
